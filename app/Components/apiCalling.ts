@@ -10,7 +10,7 @@ const data = {
     useremail: useremail,
     password: password
 }
-    const res = await fetch('http://localhost:3000/api/authentication',{
+    const res = await fetch('https://shahmir-sign-in-sign-up-form.vercel.app/api/authentication',{
     method:"PUT",
     headers:{
         "Content-Type":"application/json"
@@ -36,7 +36,7 @@ export async function SignUpComp(username:string,useremail:string,password:strin
         password: password
     }
 
-    const res = await fetch('http://localhost:3000/api/authentication',{
+    const res = await fetch('https://shahmir-sign-in-sign-up-form.vercel.app/api/authentication',{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
