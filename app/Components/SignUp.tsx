@@ -14,13 +14,14 @@ const SignUp = () => {
     const { toast } = useToast();
 
 
-  async function handleSubmit(){
+  async function handleSubmit(event: React.FormEvent){
+    event.preventDefault();
 try {
     await SignUpComp(fullName,email,password);
-    toast({
+  toast({
         title: "Successfully",
         description: "Signed Up Successfully"
-    });
+    })
 
 
 } catch (error) {
@@ -73,7 +74,7 @@ className="text-center h-12 w-80 md:w-96 outline-2 outline-blue-700 border borde
 </div>
 {/* Button*/}
 <div className='flex justify-center'>
-    <button type="submit" className=" h-12 w-72 md:w-80 text-center font-white font-semibold text-white text-lg bg-blue-700 hover:bg-blue-600 rounded-lg">Continue</button>
+    <button onSubmit={handleSubmit} type="submit" className=" h-12 w-72 md:w-80 text-center font-white font-semibold text-white text-lg bg-blue-700 hover:bg-blue-600 rounded-lg">Continue</button>
     </div>
     {/* Text  */}
     <p className='text-gray-900 flex justify-center gap-x-2'> Already have an account?<Link href="/SignIn" className="text-blue-700 font-medium"> SignIn </Link></p>
